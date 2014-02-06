@@ -1,0 +1,128 @@
+@import 'normalize.css';
+
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,300|Lato:400,900);
+
+
+$cyan_dark  :  #76bcf2;
+$cyan_light :  #a9e1f6;
+$black      :  #000000;
+$white      :  #FFFFFF;
+
+$skiny_font   : Raleway;
+$skiny_weight : 300;
+$fat_font     : Lato;
+$fat_weight   : 900;
+
+body {
+  margin:0;
+  padding:0;
+  width:100%;
+}
+
+section.fulls {
+  border:1px solid;
+  position:relative;
+}
+section.fulls.first {
+  background:$black;
+  border-color:$black;
+  figure {
+    margin:30px;
+    float:left;
+  }
+  header {
+    position:absolute;
+    top:180px;
+    width:100%;
+    h1, h2{
+      display:block;
+      margin:0 auto;
+      text-align:justify;
+      color:$cyan_dark;
+      width:330px;
+      line-height:1em;
+      height:1em;
+      max-width:100%;
+    }
+    h1 {
+      font-family:$fat_font;
+      font-weight:$fat_weight;
+      font-size:87px;
+      height:87px;
+      &.digital {
+        height:75px;
+      }
+      &.ideas {
+        letter-spacing: 5px;
+        font-size: 114px;
+      }
+    }
+    h2 {
+      font-family:$skiny_font;
+      font-weight:$skiny_weight;
+      font-size:70px;
+      height:43px;
+      line-height:60px;
+      letter-spacing:1.5px;
+    }
+    h1.ideas, h1.digital, h2 {
+      @media screen and (max-width:400px){
+        text-align:center;
+        width:100%;
+        height:1em;
+        line-height:1em;
+        padding:0;
+        margin:0;
+        font-size:40px;
+      }
+    }
+  }
+  nav {
+    position:absolute;
+    bottom:70px;
+    text-align:center;
+    width:100%;
+    margin:0 auto;
+    display:block;
+    a {
+      color:$white;
+      text-transform:lowercase;
+      text-decoration:none;
+      font-family:$skiny_font;
+      font-weight:$skiny_weight;
+      margin:0 7px;
+      letter-spacing:0px;
+      font-size:15px;
+      &:first-of-type{
+        margin-left:0;
+      }
+      &:last-of-type {
+        margin-right:0;
+      }
+      &:link, &:visited {
+        color:$white;
+      }
+      &:hover {
+        opacity:0.5;
+      }
+      @media screen and (max-width:800px){
+        display:block;
+        float:none;
+        margin: 10px 0;
+      }
+    }
+  }
+  .icon.arrow-black {
+    height:30px;
+    width:30px;
+    display:block;
+    width:100%;
+    background-image: url(../images/arrowblack.png);
+    background-position:center top;
+    background-repeat:no-repeat;
+    position:absolute;
+    bottom:10px;
+    cursor:pointer;
+  }
+}
+// .first.fulls
