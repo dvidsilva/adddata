@@ -26,6 +26,30 @@ section.fulls {
       background-image: url(../images/arrowwhite.png); }
     section.fulls .icon.arrow.top {
       top: 10px; }
+  section.fulls figure.logo.bottom {
+    position: absolute;
+    bottom: 30px;
+    right: 30px; }
+  section.fulls p.content {
+    width: 330px;
+    margin: 0 auto;
+    text-align: justify;
+    font-weight: lighter;
+    font-size: 9pt;
+    position: relative;
+    top: 250px; }
+    @media screen and (max-width: 400px) {
+      section.fulls p.content {
+        width: 90%;
+        margin: 0 5%; } }
+    section.fulls p.content .br {
+      display: block;
+      clear: both; }
+      section.fulls p.content .br:before {
+        display: block;
+        content: '';
+        height: 0.8em;
+        width: 100%; }
 
 section.fulls.first {
   background: black;
@@ -102,6 +126,58 @@ section.fulls.first {
           float: none;
           margin: 10px 0; } }
 
+#quienessomos {
+  background: #dddddd; }
+  #quienessomos header.title {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    top: 100px; }
+    #quienessomos header.title h1 {
+      width: 330px;
+      margin: 0 auto;
+      text-transform: uppercase;
+      color: #a9e1f6;
+      height: 2em; }
+      @media screen and (max-width: 400px) {
+        #quienessomos header.title h1 {
+          width: 90%;
+          margin: 0 5%; } }
+      #quienessomos header.title h1 small {
+        display: block; }
+  #quienessomos header.title h1 {
+    font-size: 52pt;
+    line-height: 37pt; }
+    #quienessomos header.title h1 small {
+      font-weight: lighter;
+      font-size: 68pt; }
+
+#quehacemos {
+  background: #dddddd; }
+  #quehacemos header.title {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    top: 100px; }
+    #quehacemos header.title h1 {
+      width: 330px;
+      margin: 0 auto;
+      text-transform: uppercase;
+      color: #a9e1f6;
+      height: 2em; }
+      @media screen and (max-width: 400px) {
+        #quehacemos header.title h1 {
+          width: 90%;
+          margin: 0 5%; } }
+      #quehacemos header.title h1 small {
+        display: block; }
+  #quehacemos header.title h1 {
+    font-size: 114pt;
+    line-height: 50pt; }
+    #quehacemos header.title h1 small {
+      font-weight: lighter;
+      font-size: 49pt; }
+
 #contactenos {
   background: #dddddd; }
   #contactenos header {
@@ -160,11 +236,7 @@ section.fulls.first {
       font-weight: lighter;
       margin-bottom: 0;
       margin-top: 0; }
-  #contactenos figure {
-    position: absolute;
-    bottom: 30px;
-    right: 30px; }
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 400px) {
     #contactenos .info {
       top: 320px; }
       #contactenos .info h1 {

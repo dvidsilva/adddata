@@ -33,3 +33,8 @@
   font-family: 'nothing';
   url('helvetica/lighter.otf') format('otf');
 }
+@font-face {
+  font-weight: lighter;
+  font-family: 'adddata';
+  url('helvetica/lighter.otf') format('otf');
+}

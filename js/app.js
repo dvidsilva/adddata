@@ -27,7 +27,10 @@
     $scope.$on("$routeChangeSuccess", function (event, next, current) {
     });
     $scope.trust = function(str){
-      return $sce.trustAsHtml(str);
+      if(typeof(str) === 'undefined'){
+        return '';
+      }
+      return $sce.trustAsHtml(str.replace(/\[#]/g, "<span class='br'></span>"));
     };
 
   });
@@ -82,4 +85,19 @@
     };
   });
 
+
+  data.controller('admin', function($scope,$firebase){
+    $scope.auth = function() {
+      return new FirebaseSimpleLogin($scope.ref, function(error, user) {});
+    };
+    $scope.addPerson = function() {
+      // AngularFire $add method
+      $scope.people.$add($scope.newPerson);
+      //or add a new person manually
+      peopleRef.update({name: 'Alex', age: 35});
+
+      $scope.newPerson = "";
+    };
+
+  });
 }(this));

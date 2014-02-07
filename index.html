@@ -14,6 +14,7 @@
   <script src="https://cdn.firebase.com/v0/firebase.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
   <script src="https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js"></script>
+  <script type='text/javascript' src='https://cdn.firebase.com/js/simple-login/1.2.5/firebase-simple-login.js'></script>
   <script src="./js/scrollto.js" ></script>
   <script src="./js/app.js" ></script>
 </head>
@@ -30,11 +31,22 @@
 </section>
 <section data-expand  data-percent="1" class='second fulls' id='quienessomos'>
   <a class='icon arrow arrow-white top' data-scrollto="home">&nbsp;</a>
+  <header class='title'>
+    <h1>Quiénes<small>Somos</small></h1>
+  </header>
+  <p class='content' data-ng-bind-html="trust(content['quienes-somos'][lang])" ></p>
   <a class='icon arrow arrow-black bottom' data-scrollto="quehacemos">&nbsp;</a>
+  <figure class='logo bottom'><img src="./images/logowhite.png" alt='adddata.net' /></figure>
 </section>
 <section data-expand  data-percent="1" class='third fulls' id='quehacemos'>
   <a class='icon arrow arrow-white top' data-scrollto="home">&nbsp;</a>
+  <header class='title'>
+    <h1>Que<small>Hacemos</small></h1>
+  </header>
+  <p class='content' data-ng-bind-html="trust(content['que-hacemos'][lang])" ></p>
+
   <a class='icon arrow arrow-black bottom' data-scrollto="contactenos">&nbsp;</a>
+  <figure class='logo bottom'><img src="./images/logowhite.png" alt='adddata.net' /></figure>
 </section>
 
 <section data-expand  data-percent="1" class='last fulls' id='contactenos'>
@@ -45,7 +57,7 @@
     <p class='email' data-ng-bind='content.contacto.email'>info@adddata.net</p>
     <p class='phone' data-ng-bind='content.contacto.phonenumber'>(+57) 310 2605079</p>
   </div>
-  <figure><img src="./images/logocyan.png" alt='adddata.net' /></figure>
+  <figure class='logo bottom'><img src="./images/logocyan.png" alt='adddata.net' /></figure>
 </section>
 
 
