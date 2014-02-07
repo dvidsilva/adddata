@@ -11,28 +11,41 @@
   <script src="http://code.angularjs.org/1.2.7/angular-sanitize.min.js" ></script>
   <script src="http://code.angularjs.org/1.2.7/angular-animate.min.js" ></script>
   <script src="http://code.jquery.com/jquery-1.11.0.min.js" ></script>
+  <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+  <script src="https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js"></script>
   <script src="./js/scrollto.js" ></script>
   <script src="./js/app.js" ></script>
 </head>
 <body data-ng-controller="mainController">
-<section data-expand  data-percent="1" class='first fulls'>
-  <figure>
-    <img src="./images/logo.png" alt='adddata.net' />
-  </figure>
-  <header>
-    <h1 class='digital'>DIGITAL</h1>
-    <h2 class='creative'>CREATIVE</h2>
-    <h1 class='ideas'>IDEAS</h1>
-  </header>
+<section data-expand  data-percent="1" class='first fulls' id='home'>
+  <figure><img src="./images/logo.png" alt='adddata.net' /></figure>
+  <header><h1 class='digital'>DIGITAL</h1><h2 class='creative'>CREATIVE</h2><h1 class='ideas'>IDEAS</h1></header>
   <nav >
-    <a href='#quienes-somos' data-scrollto='quienessomos'>quiénes Somos</a>
-    <a href='#que-hacemos' data-scrollto='quehacemos'>qué hacemos</a>
-    <a href='#contactenos' data-scrollto='contactenos' >contáctenos</a>
+    <a href="#quienes-somos" data-scrollto="quienessomos" data-ng-bind="content['quienes-somos'].label[lang]"></a>
+    <a href="#que-hacemos" data-scrollto="quehacemos" data-ng-bind="content['que-hacemos'].label[lang]"></a>
+    <a href="#contactenos" data-scrollto="contactenos" data-ng-bind="content.contacto.label[lang]"></a>
   </nav>
-  <a class='icon arrow-black' data-scrollto="quienessomos">&nbsp;</a>
+  <a class='icon arrow arrow-black bottom' data-scrollto="quienessomos">&nbsp;</a>
 </section>
-<section data-expand  data-percent="1" class='' id='quienessomos'>
-  <h1>A</h1>
+<section data-expand  data-percent="1" class='second fulls' id='quienessomos'>
+  <a class='icon arrow arrow-white top' data-scrollto="home">&nbsp;</a>
+  <a class='icon arrow arrow-black bottom' data-scrollto="quehacemos">&nbsp;</a>
+</section>
+<section data-expand  data-percent="1" class='third fulls' id='quehacemos'>
+  <a class='icon arrow arrow-white top' data-scrollto="home">&nbsp;</a>
+  <a class='icon arrow arrow-black bottom' data-scrollto="contactenos">&nbsp;</a>
+</section>
+
+<section data-expand  data-percent="1" class='last fulls' id='contactenos'>
+  <a class='icon arrow arrow-white top' data-scrollto="home">&nbsp;</a>
+  <header><h1 class='digital'>DIGITAL</h1><h2 class='creative'>CREATIVE</h2><h1 class='ideas'>IDEAS</h1></header>
+  <div class='info'>
+    <h1 data-ng-bind='content.contacto.label[lang]'>Contactenos</h1>
+    <p class='email' data-ng-bind='content.contacto.email'>info@adddata.net</p>
+    <p class='phone' data-ng-bind='content.contacto.phonenumber'>(+57) 310 2605079</p>
+  </div>
+  <figure><img src="./images/logocyan.png" alt='adddata.net' /></figure>
 </section>
 
 

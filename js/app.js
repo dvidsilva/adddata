@@ -3,7 +3,7 @@
 
   var data;
 
-  data = angular.module('data', ['ngRoute','ngSanitize','ngAnimate']);
+  data = angular.module('data', ['ngRoute','ngSanitize','ngAnimate','firebase']);
 
   // configure our routes
   data.config(function($routeProvider, $locationProvider) {
@@ -18,19 +18,13 @@
 
 
   // create the controller and inject Angular's $scope
-  data.controller('mainController', function($scope, $rootScope, $location, $sce) {
-    $scope.showBanner = function(){
-      $scope.current = $location.path();
-      $scope.banner = false;
-      if( $location.path() === '/'){
-        $scope.current = 'home';
-        $scope.banner = 'true';
-      }
-      return;
-    };
+  data.controller('mainController', function($scope, $rootScope, $location, $sce, $firebase) {
+    $scope.lang = 'spanish';
+    $scope.ref = new Firebase("https://adddata.firebaseio.com/");
+    $scope.content = $firebase($scope.ref);
+
 
     $scope.$on("$routeChangeSuccess", function (event, next, current) {
-      $scope.showBanner();
     });
     $scope.trust = function(str){
       return $sce.trustAsHtml(str);
@@ -45,7 +39,7 @@
     return {
       restrict: 'A',
       link: function (scope, elem, attrs) {
-        elem[0].style.height = (w[0].innerHeight * attrs.percent   ) + "px"; //'100px';
+        elem[0].style.minHeight = (w[0].innerHeight * attrs.percent   ) + "px"; //'100px';
       }
     };
   });
