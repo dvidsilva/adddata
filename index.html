@@ -17,50 +17,10 @@
   <script type='text/javascript' src='https://cdn.firebase.com/js/simple-login/1.2.5/firebase-simple-login.js'></script>
   <script src="./js/scrollto.js" ></script>
   <script src="./js/app.js" ></script>
+  <script src="./js/adminController.js" ></script>
 </head>
 <body data-ng-controller="mainController">
-<section data-expand  data-percent="1" class='first fulls' id='home'>
-  <figure><img src="./images/logo.png" alt='adddata.net' /></figure>
-  <header><h1 class='digital'>DIGITAL</h1><h2 class='creative'>CREATIVE</h2><h1 class='ideas'>IDEAS</h1></header>
-  <nav >
-    <a href="#quienes-somos" data-scrollto="quienessomos" data-ng-bind="content['quienes-somos'].label[lang]"></a>
-    <a href="#que-hacemos" data-scrollto="quehacemos" data-ng-bind="content['que-hacemos'].label[lang]"></a>
-    <a href="#contactenos" data-scrollto="contactenos" data-ng-bind="content.contacto.label[lang]"></a>
-  </nav>
-  <a class='icon arrow arrow-black bottom' data-scrollto="quienessomos">&nbsp;</a>
-</section>
-<section data-expand  data-percent="1" class='second fulls' id='quienessomos'>
-  <a class='icon arrow arrow-white top' data-scrollto="home">&nbsp;</a>
-  <header class='title'>
-    <h1>Quiénes<small>Somos</small></h1>
-  </header>
-  <p class='content' data-ng-bind-html="trust(content['quienes-somos'][lang])" ></p>
-  <a class='icon arrow arrow-black bottom' data-scrollto="quehacemos">&nbsp;</a>
-  <figure class='logo bottom'><img src="./images/logowhite.png" alt='adddata.net' /></figure>
-</section>
-<section data-expand  data-percent="1" class='third fulls' id='quehacemos'>
-  <a class='icon arrow arrow-white top' data-scrollto="home">&nbsp;</a>
-  <header class='title'>
-    <h1>Que<small>Hacemos</small></h1>
-  </header>
-  <p class='content' data-ng-bind-html="trust(content['que-hacemos'][lang])" ></p>
-
-  <a class='icon arrow arrow-black bottom' data-scrollto="contactenos">&nbsp;</a>
-  <figure class='logo bottom'><img src="./images/logowhite.png" alt='adddata.net' /></figure>
-</section>
-
-<section data-expand  data-percent="1" class='last fulls' id='contactenos'>
-  <a class='icon arrow arrow-white top' data-scrollto="home">&nbsp;</a>
-  <header><h1 class='digital'>DIGITAL</h1><h2 class='creative'>CREATIVE</h2><h1 class='ideas'>IDEAS</h1></header>
-  <div class='info'>
-    <h1 data-ng-bind='content.contacto.label[lang]'>Contactenos</h1>
-    <p class='email' data-ng-bind='content.contacto.email'>info@adddata.net</p>
-    <p class='phone' data-ng-bind='content.contacto.phonenumber'>(+57) 310 2605079</p>
-  </div>
-  <figure class='logo bottom'><img src="./images/logocyan.png" alt='adddata.net' /></figure>
-</section>
-
-
+  <ng-view ></ng-view>
 </body>
 
 </html>

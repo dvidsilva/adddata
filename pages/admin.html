@@ -1,0 +1,72 @@
+<section class='admin'  data-ng-if='!auth' data-ng-init='checkauth()'>
+<div id='login' >
+  <div class='error' data-ng-if='error.show' data-ng-bind='error.text'></div>
+  <div class='row'>
+    <label for='username'>
+      Username
+    </label>
+    <input type='text' ng-model='user.username' name='username'/>
+  </div>
+  <div class='row'>
+    <label for='password'>
+      Password
+    </label>
+    <input type='password' ng-model='user.password' name='password'/>
+  </div>
+</div>
+<div class='row'>
+  <button href='/admin' ng-click='login()' >Iniciar Sesión</button>
+</div>
+</section>
+<section class='admin' data-ng-if='auth' data-ng-init='checkauth()'>
+    <section class='row contacto'>
+      <h1>Contacto</h1>
+      <div class='row'>
+        <label for=''> Telefono </label>
+        <input type='text' ng-model='contacto.phonenumber' />
+      </div>
+
+      <div class='row'>
+        <label for=''> Email </label>
+        <input type='text' ng-model='contacto.email' />
+      </div>
+
+      <button ng-click='contacto.$save()' >Guardar Datos Contacto</button>
+    </section>
+
+
+
+    <section class='row que-hacemos'>
+      <h1>Que Hacemos</h1>
+      <div class='row'>
+        <label for=''> English </label>
+        <textarea ng-model='hacemos.english'  ></textarea>
+      </div>
+
+      <div class='row'>
+        <label for=''> Spanish </label>
+        <textarea ng-model='hacemos.spanish' ></textarea>
+      </div>
+
+      <button ng-click='hacemos.$save()' >Guardar que hacemos</button>
+    </section>
+
+
+
+    <section class='row quienes-somos'>
+      <h1>Quienes Somos</h1>
+      <div class='row'>
+        <label for=''> English </label>
+        <textarea ng-model='somos.english'  ></textarea>
+      </div>
+
+      <div class='row'>
+        <label for=''> Spanish </label>
+        <textarea ng-model='somos.spanish' ></textarea>
+      </div>
+
+      <button ng-click='somos.$save()' >Guardar Quienes Somos </button>
+    </section>
+
+
+</section>

@@ -2,6 +2,7 @@
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,300|Lato:400,900);
 @import url(fonts.css);
 body {
+  background: #76bcf2;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -241,3 +242,37 @@ section.fulls.first {
       top: 320px; }
       #contactenos .info h1 {
         margin-bottom: 1em; } }
+
+section.admin {
+  background: #a9e0f9;
+  width: 800px;
+  margin: 10px auto;
+  padding: 10px; }
+  @media screen and (max-width: 780px) {
+    section.admin {
+      width: 96%;
+      margin: 0;
+      padding: 2%; } }
+  section.admin .row {
+    clear: both;
+    width: 100%;
+    margin: 3px 0; }
+    section.admin .row .error {
+      color: red; }
+    section.admin .row:after {
+      display: block;
+      content: '';
+      clear: both;
+      width: 100%;
+      height: 1px; }
+    section.admin .row label {
+      display: block;
+      width: 100%;
+      margin-bottom: 2px; }
+    section.admin .row input[type='text'], section.admin .row input[type='password'], section.admin .row textarea {
+      float: left;
+      display: block;
+      width: 65%;
+      margin-left: 2%; }
+    section.admin .row textarea {
+      height: 120px; }

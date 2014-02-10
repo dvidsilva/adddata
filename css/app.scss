@@ -92,6 +92,7 @@ $fat_weight   : bolder;
 
 }
 body {
+  background:$cyan_dark;
   margin:0;
   padding:0;
   width:100%;
@@ -273,3 +274,44 @@ section.fulls.first {
   }
 }
 // #contactenos
+
+section.admin {
+  background:$cyan_ligher;
+  width:800px;
+  margin:10px auto;
+  padding:10px;
+  @media screen and (max-width:780px){
+    width:96%;
+    margin:0;
+    padding:2%;
+  }
+  .row {
+    clear:both;
+    width:100%;
+    margin:3px 0;
+    .error {
+      color:red;
+    }
+    &:after {
+      display: block;
+      content: '';
+      clear: both;
+      width:100%;
+      height:1px;
+    }
+    label{
+      display: block;
+      width: 100%;
+      margin-bottom:2px;
+    }
+    input[type='text'], input[type='password'], textarea {
+      float: left;
+      display: block;
+      width: 65%;
+      margin-left: 2%;
+    }
+    textarea {
+      height:120px;
+    }
+  }
+}

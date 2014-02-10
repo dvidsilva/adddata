@@ -13,6 +13,10 @@
       templateUrl : 'pages/home.html',
       controller  : 'homeController'
     })
+    .when('/admin', {
+      templateUrl: 'pages/admin.html',
+      controller: 'adminController'
+    })
     .otherwise({redirectTo: '/'});
   });
 
@@ -30,12 +34,27 @@
       if(typeof(str) === 'undefined'){
         return '';
       }
-      return $sce.trustAsHtml(str.replace(/\[#]/g, "<span class='br'></span>"));
+      str = str.replace(/\n/g, "<span class='br'></span>");
+      return $sce.trustAsHtml(str);
+    };
+    $scope.breaks = function(str){
+      if(typeof(str) === 'undefined'){
+        return '';
+      }
+      return str.replace(/\[#]/g, "\n");
+    };
+    $scope.breaksToFb = function(str){
+      if(typeof(str) === 'undefined'){
+        return '';
+      }
+      return str.replace(/\\n/g, "[#]");
     };
 
   });
 
+  data.controller('homeController', function($scope){
 
+  });
   data.directive('expand', function($window){
     var w;
     w = angular.element($window);
@@ -100,4 +119,52 @@
     };
 
   });
+
+
+  // admin section
+  data.controller('adminController', function($scope, $rootScope, $location, $sce, $firebase) {
+    $scope.auth = false;
+    $scope.user = {};
+    $scope.firel = new FirebaseSimpleLogin($scope.ref, function(error, user) {
+        if (error) {
+          console.log(error);
+          $scope.error = {show: true, text: "email o contraseña invalidos"}
+          $scope.auth = false;
+        } else if (user) {
+          console.log('User ID: ' + user.id + ', Provider: ' + user.provider);
+          $scope.auth = true;
+        } else {
+          console.log('logedout');
+          $scope.auth = false;
+        }
+        $scope.$apply();
+      });
+    $scope.checkauth = function(){
+      return;
+    };
+    $scope.logout = function(){
+      $scope.firel.logout();
+    };
+    $scope.login = function(e){
+      $scope.firel.login('password', {
+        email: $scope.user.username,
+        password: $scope.user.password
+      });
+    };
+
+    $scope.contactoRef = new Firebase("https://adddata.firebaseio.com/contacto/");
+    $scope.contacto = $firebase($scope.contactoRef);
+
+
+    $scope.hacemosRef = new Firebase("https://adddata.firebaseio.com/que-hacemos/");
+    $scope.hacemos = $firebase($scope.hacemosRef);
+
+
+    $scope.somosRef = new Firebase("https://adddata.firebaseio.com/quienes-somos/");
+    $scope.somos = $firebase($scope.somosRef);
+
+  
+  });
+
+
 }(this));
