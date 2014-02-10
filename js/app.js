@@ -24,6 +24,9 @@
   // create the controller and inject Angular's $scope
   data.controller('mainController', function($scope, $rootScope, $location, $sce, $firebase) {
     $scope.lang = 'spanish';
+    $scope.changeLang = function(){
+      $scope.lang =  $scope.lang  === 'spanish' ? 'english' : 'spanish';
+    }
     $scope.ref = new Firebase("https://adddata.firebaseio.com/");
     $scope.content = $firebase($scope.ref);
 

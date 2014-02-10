@@ -229,6 +229,14 @@ section.fulls.first {
         font-size:49pt;
       }
     }
+    &.english {
+      h1 {
+        font-size:83pt;
+        small {
+          font-size:69pt;
+        }
+      }
+    }
   }
 }
 
@@ -274,7 +282,19 @@ section.fulls.first {
   }
 }
 // #contactenos
-
+.alwaystop.right{
+  z-index:999;
+  font-size:11px;
+  position:fixed;
+  right: 70px;
+  top: 30px;
+  width:auto;
+  color:white;
+  cursor:pointer;
+  a {
+    color: white;
+  }
+}
 section.admin {
   background:$cyan_ligher;
   width:800px;
@@ -309,6 +329,10 @@ section.admin {
       display: block;
       width: 65%;
       margin-left: 2%;
+      @media screen and (max-width:780px){
+        width:90%;
+        margin:2px 5%;
+      }
     }
     textarea {
       height:120px;

@@ -178,6 +178,10 @@ section.fulls.first {
     #quehacemos header.title h1 small {
       font-weight: lighter;
       font-size: 49pt; }
+  #quehacemos header.title.english h1 {
+    font-size: 83pt; }
+    #quehacemos header.title.english h1 small {
+      font-size: 69pt; }
 
 #contactenos {
   background: #dddddd; }
@@ -243,6 +247,18 @@ section.fulls.first {
       #contactenos .info h1 {
         margin-bottom: 1em; } }
 
+.alwaystop.right {
+  z-index: 999;
+  font-size: 11px;
+  position: fixed;
+  right: 70px;
+  top: 30px;
+  width: auto;
+  color: white;
+  cursor: pointer; }
+  .alwaystop.right a {
+    color: white; }
+
 section.admin {
   background: #a9e0f9;
   width: 800px;
@@ -274,5 +290,9 @@ section.admin {
       display: block;
       width: 65%;
       margin-left: 2%; }
+      @media screen and (max-width: 780px) {
+        section.admin .row input[type='text'], section.admin .row input[type='password'], section.admin .row textarea {
+          width: 90%;
+          margin: 2px 5%; } }
     section.admin .row textarea {
       height: 120px; }

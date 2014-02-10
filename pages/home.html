@@ -1,3 +1,4 @@
+<div class='alwaystop right' ng-click='changeLang()'>English / Español</div>
 <section data-expand  data-percent="1" class='first fulls' id='home'>
   <figure><img src="./images/logo.png" alt='adddata.net' /></figure>
   <header><h1 class='digital'>DIGITAL</h1><h2 class='creative'>CREATIVE</h2><h1 class='ideas'>IDEAS</h1></header>
@@ -10,8 +11,9 @@
 </section>
 <section data-expand  data-percent="1" class='second fulls' id='quienessomos'>
   <a class='icon arrow arrow-white top' data-scrollto="home">&nbsp;</a>
-  <header class='title'>
-    <h1>Quiénes<small>Somos</small></h1>
+  <header class='title {{lang}}'>
+    <h1 data-ng-if='lang==="spanish"'>Quiénes<small>Somos</small></h1>
+    <h1 data-ng-if='lang==="english"'>Who we<small>Are</small></h1>
   </header>
   <p class='content' data-ng-bind-html="trust(content['quienes-somos'][lang])" ></p>
   <a class='icon arrow arrow-black bottom' data-scrollto="quehacemos">&nbsp;</a>
@@ -19,8 +21,9 @@
 </section>
 <section data-expand  data-percent="1" class='third fulls' id='quehacemos'>
   <a class='icon arrow arrow-white top' data-scrollto="home">&nbsp;</a>
-  <header class='title'>
-    <h1>Que<small>Hacemos</small></h1>
+  <header class='title {{lang}}'>
+    <h1 data-ng-if='lang==="spanish"'>Que<small>Hacemos</small></h1>
+    <h1 data-ng-if='lang==="english"'>What<small>we do</small></h1>
   </header>
   <p class='content' data-ng-bind-html="trust(content['que-hacemos'][lang])" ></p>
 
