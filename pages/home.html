@@ -1,43 +1,74 @@
-<div class='alwaystop right' ng-click='changeLang()'>English / Español</div>
-<section data-expand  data-percent="1" class='first fulls' id='home'>
-  <figure><img src="./images/logo.png" alt='adddata.net' /></figure>
-  <header><h1 class='digital'>DIGITAL</h1><h2 class='creative'>CREATIVE</h2><h1 class='ideas'>IDEAS</h1></header>
+<!-- <div class="alwaystop right" data-ng-click="changeLang()">English / Español</div> -->
+<section data-expand  data-percent="1" class="first fulls" id="home">
+  <figure><img src="./images/logo.png" alt="adddata.net" /></figure>
+  <!-- <header><h1 class="digital">DIGITAL</h1><h2 class="creative">CREATIVE</h2><h1 class="ideas">IDEAS</h1></header> -->
+  <header>
+    <h1><img src="./images/digitalcreativeideas.png" alt="Digital Creative Ideas"></h1>
+  </header>
   <nav >
-    <a href="#quienes-somos" data-scrollto="quienessomos" data-ng-bind="content['quienes-somos'].label[lang]"></a>
-    <a href="#que-hacemos" data-scrollto="quehacemos" data-ng-bind="content['que-hacemos'].label[lang]"></a>
-    <a href="#contactenos" data-scrollto="contactenos" data-ng-bind="content.contacto.label[lang]"></a>
+    <a class="quienessomos" href="#quienes-somos" data-scrollto="quienessomos" data-ng-bind="content['quienes-somos'].label[lang]"></a>
+    <a class="quehacemos" href="#que-hacemos" data-scrollto="quehacemos" data-ng-bind="content['que-hacemos'].label[lang]"></a>
+    <a class="contactenos" href="#contactenos" data-scrollto="contactenos" data-ng-bind="content.contacto.label[lang]"></a>
   </nav>
-  <a class='icon arrow arrow-black bottom' data-scrollto="quienessomos">&nbsp;</a>
-</section>
-<section data-expand  data-percent="1" class='second fulls' id='quienessomos'>
-  <a class='icon arrow arrow-white top' data-scrollto="home">&nbsp;</a>
-  <header class='title {{lang}}'>
-    <h1 data-ng-if='lang==="spanish"'>Quiénes<small>Somos</small></h1>
-    <h1 data-ng-if='lang==="english"'>Who we<small>Are</small></h1>
-  </header>
-  <p class='content' data-ng-bind-html="trust(content['quienes-somos'][lang])" ></p>
-  <a class='icon arrow arrow-black bottom' data-scrollto="quehacemos">&nbsp;</a>
-  <figure class='logo bottom'><img src="./images/logowhite.png" alt='adddata.net' /></figure>
-</section>
-<section data-expand  data-percent="1" class='third fulls' id='quehacemos'>
-  <a class='icon arrow arrow-white top' data-scrollto="home">&nbsp;</a>
-  <header class='title {{lang}}'>
-    <h1 data-ng-if='lang==="spanish"'>Que<small>Hacemos</small></h1>
-    <h1 data-ng-if='lang==="english"'>What<small>we do</small></h1>
-  </header>
-  <p class='content' data-ng-bind-html="trust(content['que-hacemos'][lang])" ></p>
-
-  <a class='icon arrow arrow-black bottom' data-scrollto="contactenos">&nbsp;</a>
-  <figure class='logo bottom'><img src="./images/logowhite.png" alt='adddata.net' /></figure>
+  <a class="icon arrow arrow-black bottom" data-scrollto="quienessomos">&nbsp;</a>
 </section>
 
-<section data-expand  data-percent="1" class='last fulls' id='contactenos'>
-  <a class='icon arrow arrow-white top' data-scrollto="home">&nbsp;</a>
-  <header><h1 class='digital'>DIGITAL</h1><h2 class='creative'>CREATIVE</h2><h1 class='ideas'>IDEAS</h1></header>
-  <div class='info'>
-    <h1 data-ng-bind='content.contacto.label[lang]'>Contactenos</h1>
-    <p class='email' data-ng-bind='content.contacto.email'>info@adddata.net</p>
-    <p class='phone' data-ng-bind='content.contacto.phonenumber'>(+57) 310 2605079</p>
-  </div>
-  <figure class='logo bottom'><img src="./images/logocyan.png" alt='adddata.net' /></figure>
+
+
+<section data-expand  data-percent="1" class="second fulls" id="quienessomos">
+  <a class="icon arrow arrow-white top" data-scrollto="home">&nbsp;</a>
+  <header class="title {{lang}}">
+    <!-- <h1 data-ng-if="lang==="spanish"">Quiénes<small>Somos</small></h1> -->
+    <!-- <h1 data-ng-if="lang==="english"">Who we<small>Are</small></h1> -->
+    <h1><img src="./images/quienessomos_sp.png" alt="Quienes Somos"></h1>
+  </header>
+  <p class="content" data-ng-bind-html="trust(content['quienes-somos'][lang])" ></p>
+  <a class="icon arrow arrow-black bottom" data-scrollto="quehacemos">&nbsp;</a>
+  <figure class="logo bottom"><img src="./images/logowhite.png" alt="adddata.net" /></figure>
+</section>
+
+
+
+
+<section data-expand  data-percent="1" class="third fulls" id="quehacemos">
+  <a class="icon arrow arrow-white top" data-scrollto="home">&nbsp;</a>
+  <header class="title {{lang}}">
+    <!-- <h1 data-ng-if="lang==="spanish"">Que<small>Hacemos</small></h1> -->
+    <!-- <h1 data-ng-if="lang==="english"">What<small>we do</small></h1> -->
+    <h1><img src="./images/quehacemos_sp.png" alt="Qué Hacemos"></h1>
+  </header>
+  <p class="content" data-ng-bind-html="trust(content['que-hacemos'][lang])" ></p>
+
+  <a class="icon arrow arrow-black bottom" data-scrollto="clientes">&nbsp;</a>
+  <figure class="logo bottom"><img src="./images/logowhite.png" alt="adddata.net" /></figure>
+</section>
+
+
+<section data-expand data-percent="1" class="fourth fulls" id="clientes" >
+  <a class="icon arrow arrow-white top" data-scrollto="home">&nbsp;</a>
+  <header class="title {{lang}}">
+    <h1><img src="./images/quehacemos_sp.png" alt="Qué Hacemos"></h1>
+    <h2 class='selected'>Clientes</h2>
+  </header>
+  <figure class='clientlogos'><img src="./images/clienteslogos.png" alt="Entre nuestros clientes están RCN Televisión, Paginas Amarillas, Konrad Lorenz"></figure>
+  <a class="icon arrow arrow-black bottom" data-scrollto="contactenos">&nbsp;</a>
+  <figure class="logo bottom"><img src="./images/logowhite.png" alt="adddata.net" /></figure>
+</section>
+
+<section data-expand  data-percent="1" class="last fulls" id="contactenos">
+  <a class="icon arrow arrow-white top" data-scrollto="home">&nbsp;</a>
+  <header>
+    <!-- <h1 class="digital">DIGITAL</h1><h2 class="creative">CREATIVE</h2><h1 class="ideas">IDEAS</h1> -->
+    <h1><img src='./images/digitalcreativeideasimg.png' alt='Digital Creative Ideas' ></h1>
+    <h2><img src='./images/contactenos_sp.png' alt='info@adddata.net' ></h2>
+  </header>
+
+  <!-- <div class="info"> -->
+  <!--   <h1 data-ng-bind="content.contacto.label[lang]">Contactenos</h1> -->
+  <!--   <p class="email" data-ng-bind="content.contacto.email">info@adddata.net</p> -->
+  <!--   <p class="phone" data-ng-bind="content.contacto.phonenumber">(+57) 310 2605079</p> -->
+  <!-- </div> -->
+
+
+  <figure class="logo bottom"><img src="./images/logocyan.png" alt="adddata.net" /></figure>
 </section>

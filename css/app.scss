@@ -6,6 +6,8 @@
 $cyan_dark  :  #76bcf2;
 $cyan_light :  #a9e1f6;
 $cyan_ligher:  #a9e0f9;
+$cyan_bg    :  #aae0fa;
+
 $black      :  #000000;
 $white      :  #FFFFFF;
 
@@ -16,6 +18,19 @@ $skiny_weight : lighter;
 $fat_font     : adddata;
 $fat_weight   : bolder;
 
+
+
+
+@mixin gradient($color1, $color2) {
+  background: $color1; /* Old browsers */
+  background: -moz-linear-gradient(top,  $color1 0%, $color2 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$color1), color-stop(100%,$color2)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  $color1 0%,$color2 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  $color1 0%,$color2 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  $color1 0%,$color2 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  $color1 0%,$color2 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2',GradientType=0 ); /* IE6-9 */
+}
 
 @mixin logo {
   header {
@@ -68,6 +83,7 @@ $fat_weight   : bolder;
 }
 
 
+
 @mixin htitle($col : $cyan_light) {
   header.title {
     text-align:center;
@@ -102,6 +118,11 @@ body {
 section.fulls {
   border:1px solid;
   position:relative;
+  h1 {
+    img {
+      width:100%;
+    }
+  }
   .icon.arrow {
     height:30px;
     width:30px;
@@ -134,7 +155,7 @@ section.fulls {
     font-weight:$skiny_weight;
     font-size:9pt;
     position:relative;
-    top:250px;
+    top:270px;
     @media screen and (max-width: 400px){
       width:90%;
       margin:0 5%;
@@ -145,7 +166,7 @@ section.fulls {
       &:before {
         display:block;
         content:'';
-        height:0.8em;
+        height:0.3em;
         width:100%;
       }
     }
@@ -163,34 +184,40 @@ section.fulls.first {
   nav {
     position:absolute;
     bottom:70px;
+    left:50%;
+    margin-left:-165px;
     text-align:center;
-    width:100%;
-    margin:0 auto;
+    width:370px;
     display:block;
     a {
-      color:$white;
-      text-transform:lowercase;
-      text-decoration:none;
-      font-family:$skiny_font;
-      font-weight:$skiny_weight;
-      margin:0 7px;
-      letter-spacing:0px;
-      font-size:15px;
-      &:first-of-type{
-        margin-left:0;
-      }
-      &:last-of-type {
-        margin-right:0;
-      }
-      &:link, &:visited {
-        color:$white;
-      }
+      display:block;
+      margin:0;
+      float:left;
+      background-repeat: no-repeat;
+      background-size:contain;
+      background-position:top left;
+      padding-top:2em;
+      font-size:0;
+      height:25px;
+      margin:0;
       &:hover {
-        opacity:0.5;
+        opacity:0.8;
+      }
+      &.quienessomos {
+        width:33%;
+        background-image: url(../images/quienessomosnav.png);
+      }
+      &.quehacemos {
+        width:32%;
+        background-image: url(../images/quehacemosnav.png);
+      }
+      &.contactenos {
+        width:25%;
+        background-image: url(../images/contactenosnav.png);
       }
       @media screen and (max-width:800px){
         display:block;
-        float:none;
+        /*&float:none; */
         margin: 10px 0;
       }
     }
@@ -200,7 +227,7 @@ section.fulls.first {
 
 
 #quienessomos {
-  background:$grayl;
+  @include gradient(#f4f4f4, $white);
   @include htitle;
   header.title {
     h1 {
@@ -218,7 +245,7 @@ section.fulls.first {
 
 
 #quehacemos {
-  background:$grayl;
+  background:$cyan_bg;
   @include htitle;
   header.title {
     h1 {
@@ -238,7 +265,44 @@ section.fulls.first {
       }
     }
   }
+  p.content {
+    top: 325px;
+  }
 }
+
+
+#clientes {
+  background:$cyan_bg;
+  @include htitle;
+  header.title {
+    h1 {
+      font-size:114pt;
+      line-height:50pt;
+      height:auto;
+      margin-bottom:20px;
+      small{
+        font-weight:$skiny_weight;
+        font-size:49pt;
+      }
+    }
+    h2 {
+      width:330px;
+      margin:0 auto;
+      text-align:center;
+      font-weight:$skiny_weight;
+    }
+  }
+  .clientlogos {
+    width:330px;
+    margin:0 auto;
+    margin-top:410px;
+    img {
+      width:100%;
+      border-radius:8px;
+    }
+  }
+}
+
 
 
 
@@ -247,11 +311,20 @@ section.fulls.first {
 
 // #contactenos
 #contactenos{
-  background: $grayl;
+  @include gradient(#e3e3e3, $white);
   @include logo;
   header {
+    top:100px;
     h1,h2,p{
       color: $cyan_ligher;
+      height:auto;
+    }
+    h2 {
+      width:330px;
+      margin:0 auto;
+      img {
+        width:100%;
+      }
     }
   }
   .info {
